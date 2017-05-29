@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--Search bar JS Put in header-->
+    <script type="text/javascript">
+        function active(){
+            var searchBar = document.getElementById('searchBar');
+
+            if(searchBar.value == 'Search...'){
+                searchBar.value = ''
+                searchBar.placeholder = 'Search...'
+            }
+        }
+        function inactive(){
+            var searchBar = document.getElementById('searchBar');
+
+            if(searchBar.value == ''){
+                searchBar.value = 'Search...'
+                searchBar.placeholder = ''
+            }
+        }
+    </script>
+    
+</head>
+
+<body>
+
+<!--Search Bar Put in body-->
+    <form action="search.php" method="post">
+        <input type="text" id="searchBar" placeholder="" value="Search..." maxlength="25" autocomplete="on" onmousedown="active();" onBlur="inactive();"><input type="submit" id="searchBtn" value="Go!" />
+    </form>
+    
+</body>
+</html>
